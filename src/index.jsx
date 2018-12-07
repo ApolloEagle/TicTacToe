@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-function Square(props) {
+function Square(props) { //function component for each square
     return (
       <button className="square" onClick={props.onClick}>
         {props.value}
@@ -14,13 +14,13 @@ function Square(props) {
     renderSquare(i) {
       return (
         <Square
-          value={this.props.squares[i]}
-          onClick={() => this.props.onClick(i)}
+          value={this.props.squares[i]} //passing prop 'value' to Square component
+          onClick={() => this.props.onClick(i)} //passing prop 'onClick' to Square component
         />
       );
     }
   
-    render() {
+    render() { //rendering board
       return (
         <div>
           <div className="board-row">
@@ -50,7 +50,7 @@ function Square(props) {
         history: [{
           squares: Array(9).fill(null)
         }],
-        xIsNext: true
+        xIsNext: true //checking turns
       };
     }
   
@@ -92,7 +92,6 @@ function Square(props) {
           </div>
           <div className="game-info">
             <div>{status}</div>
-            <ol>{/* TODO */}</ol>
           </div>
         </div>
       );
